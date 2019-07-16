@@ -1,0 +1,76 @@
+
+<html>
+	<head>
+		<title>Task 5</title>
+    </head>	
+	<head>
+	
+	<script>
+		function calculate()
+		{
+				var length = parseInt(document.getElementById('len').value);
+				var width = parseInt(document.getElementById('wid').value);
+				 var height = parseInt(document.getElementById('hei').value);
+            if (length == "")								 
+	           { 
+		          window.alert("Please enter your Length."); 
+		          l.focus(); 
+		          return false; 
+	           } 
+            
+            if(length<0)
+                {
+                    alert("Enter a valid Length value");
+                    return false;
+                }
+    
+			 
+            
+            if (width == "")								 
+	{ 
+		window.alert("Please enter your width."); 
+		width.focus(); 
+		return false; 
+	}  
+            if(width<0)
+                {
+                    alert("Enter a valid Width value");
+                    return false;
+                }
+            
+		
+            
+            if (height == "")								 
+	{ 
+		window.alert("Please enter your height."); 
+		height.focus(); 
+		return false; 
+	} 
+            if(height<0)
+                {
+                    alert("Enter a valid Height value");
+                    return false;
+                }
+            
+             var area = 2*((l*w)+(w*h)+(h*l));
+           
+            var volume = (l*w*h);
+        
+          document.write("Surface area of the cuboid is "+area+" unit sq"+"<br>");
+            document.write(" Volume of the cuboid is "+volume+" unit cube");
+        
+		}
+	</script>
+        </head>
+	
+	<body>
+		<div style="border:black;" class="form">
+			<h1>Calculate surface area and volume of a cuboid</h1>
+			
+            <p>Length : <input type="text" value="" id="len"></p>
+            <p>Width : <input type="text" value="" id="wid"></p>
+            <p>Height : <input type="text" value="" id="hei"></p>
+            <p><input type="button" value="calculate" onclick="calculate()"></p><br>
+		</div>
+	</body>
+</html>

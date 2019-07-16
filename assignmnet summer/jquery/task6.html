@@ -1,0 +1,109 @@
+<html> 
+    <head>
+		<title>Task 6</title>
+    </head>
+<head> 
+<script> 
+function validate()								 
+{ 
+	var cd = document.forms["RegForm"]["cd"];
+    var id = document.forms["RegForm"]["id"];
+    var fname = document.forms["RegForm"]["fname"];
+    var lname = document.forms["RegForm"]["lname"];
+    var address = document.forms["RegForm"]["address"];
+	var email = document.forms["RegForm"]["email"]; 
+	var phone = document.forms["RegForm"]["telephone"];
+    var validity = document.forms["RegForm"]["validity"];
+	var location = document.forms["RegForm"]["location"];  
+    var submit = document.forms["RegForm"]["Submit"];
+    
+	if (id.value == "")								 
+	{ 
+		window.alert("Please enter your name."); 
+		name.focus(); 
+		return false; 
+	} 	
+	if (email.value == "")								 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf("@", 0) < 0)				 
+	{ 
+		window.alert("@ Missing"); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf(".com", 0) < 0)				 
+	{ 
+		window.alert(".com Missing"); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (phone.value == "")						 
+	{ 
+		window.alert("Please enter your Phone number."); 
+		phone.focus(); 
+		return false; 
+	}
+    if (validity.value == ("1") < 1)						 
+	{ 
+		window.alert("Please enter right validity."); 
+		phone.focus(); 
+		return false; 
+	}
+    if(submit)
+       {
+       window.alert("Submitted Successfully");
+       submit.focus();
+       return true;
+       }
+
+	return true; 
+}</script>
+<style>  
+    h1{
+        border: solid black;
+        background: yellow;
+    }
+
+form {
+    border-spacing: 10px;
+    border: solid black;
+    background: yellow;
+	margin: 0 auto; 
+	width: 600px;
+    text-decoration-style: dashed;
+    
+}</style></head> 
+
+<body> 		 
+<form name="RegForm" action="task6.html" onsubmit="return validate()" method="post"> 
+    <h1 style="text-align: center"> CLUB MEMBERSHIP FORM </h1>
+	
+	<p>Current Date <input type="date" size=65 name="cd"> </p>
+    <p>Membership ID* <input type="text" size=65 name="id"> </p>
+    <p>First Name <input type="text" size=65 name="fname" style='text-transform:uppercase'> </p>
+    <p>Last Name <input type="text" size=65 name="lname" style='text-transform:uppercase'> </p>
+	<p> Address <input type="text" size=65 name="address"> </p> 
+	<p>E-mail* <input type="text" size=65 name="email"> </p> 
+	<p>Phone Number* <input type="text" size=65 name="telephone"> </p>
+    <p>Validity <input type="number" size=65 name="validity"> </p>
+		
+	<p>Location 
+		<select type="text" value="" name="location"> 
+			<option>DEFAULT</option> 
+			<option>CHANDIGARH</option> 
+			<option>PATIALA</option> 
+			<option>LUDHIANA</option> 
+		</select></p>
+	<p>Other <textarea cols="55" name="Comment"> </textarea></p> 
+    <p><input type="submit" value="Submit" name="Submit">
+    <input type="reset" value="Reset All" name="Reset All"></p>		 
+</form> 
+</body> 
+</html> 
